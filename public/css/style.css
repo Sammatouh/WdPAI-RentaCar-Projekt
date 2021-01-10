@@ -1,62 +1,289 @@
-body {
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
     margin: 0;
+    padding: 0;
+    font-family: Consolas, monaco, monospace;
     background-image: url("../img/heero_background.jpg");
-    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
     background-repeat: no-repeat;
-    background-attachment: scroll;
+    background-size: cover;
+}
+
+.navbar {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3E3E3E;
+    color: #E4E4E4;
+}
+
+.navbar > img {
+    height: 2.5rem;
+    margin: 0.8rem;
+}
+
+.navbar-links {
+    height: 100%;
+}
+
+.navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    list-style: none;
+    font-size: 1.2rem;
+}
+
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: #E4E4E4;
+    padding: 1rem;
+}
+
+.navbar-links li:hover {
+    background-color: #D52A2A;
+}
+
+.toggle-button {
+    position: absolute;
+    top: 1.4rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #E4E4E4;
+    border-radius: 10px;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-box {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading {
+    font-size: 2.375em;
+    font-weight: bold;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.84) 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    width: 33.5rem;
+    height: 34rem;
+    padding-top: 1.5rem;
+    margin: 0 0 2rem 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+form {
+    width: 100%;
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    width: 75%;
+    height: 3.5rem;
+    border: 1px solid #707070;
+    margin: 1.2rem;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 1.1rem;
+    padding-left: 1rem;
+}
+
+input::placeholder {
     font-family: Consolas, monaco, monospace;
 }
 
-header {
-    background: #3E3E3E;
-    height: 3em;
-}
-
-header::after {
-    content: '';
-    display: table;
-    clear: both;
-}
-
-
-.container > img {
-    height: 2.5em;
-}
-
-.logo {
-    float: left;
-    padding-left: 2em;
-}
-
-nav {
-    float: right;
-    padding-top: 0.7em;
-    padding-right: 1.5em;
-}
-
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-nav li {
-    display: inline-block;
-    margin-left: 2em;
+button {
+    font-family: Consolas, monaco, monospace;
+    background: #D52A2A 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
     color: #E4E4E4;
+    margin: 1.5rem;
 }
 
-nav a {
-    color: #E4E4E4;
+button.login {
+    width: 75%;
+    font-size: 1.5rem;
+    line-height: 2.75rem;
+}
+
+button.rd-more {
+    width: 14rem;
+    line-height: 3rem;
+    font-size: 1.75rem;
+}
+
+p {
+    text-align: center;
+    margin: 1rem;
+}
+
+a {
     text-decoration: none;
-    font-size: 1.2em;
-}
-
-nav a:hover {
     color: #D52A2A;
 }
 
-nav i:hover {
-    color: #D52A2A;
-    cursor: pointer;
+.read-more {
+    background: rgba(255, 255, 255, 0.84) 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    width: 70%;
+    height: 40%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.register {
+    background: rgba(255, 255, 255, 0.84) 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    width: 70%;
+}
+
+.checkbox-container {
+    width: 70%;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin: 0 10px 0 0;
+}
+
+label {
+    font-size: 1rem;
+}
+
+button.signup {
+    margin: 0.2rem;
+    font-size: 1.5rem;
+    width: 23rem;
+    line-height: 2.75rem;
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .container {
+        flex-direction: column-reverse;
+    }
+
+    .login-box,
+    .info-box {
+        width: 100%;
+    }
+
+    .login-box {
+        margin-top: 25px;
+    }
+
+    .info-box {
+        height: 400px;
+        margin-top: 200px;
+        margin-bottom: 20px;
+    }
+
+    .login-container,
+    .read-more {
+        width: 90%;
+        margin: 0;
+    }
+
+    .read-more {
+        height: 250px;
+        margin-top: 100px;
+    }
+
+    .register {
+        width: 90%;
+    }
+
+    button.signup {
+        width: 75%;
+    }
 }

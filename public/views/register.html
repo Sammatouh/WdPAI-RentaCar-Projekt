@@ -1,10 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src="../js/hamburger.js" defer></script>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>REGISTER</title>
 </head>
 <body>
+    <header>
+        <nav class="navbar">
+            <img src="../img/logo.svg" alt="logo" class="logo">
+            <a href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="navbar-links">
+                <ul>
+                    <li><a href="login.html">HOME</a></li>
+                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="#">CAR LISTING</a></li>
+                    <li><a href="#">CONTACT US</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
+    <div class="container">
+        <div class="register">
+            <p class="heading">Register</p>
+            <form>
+                <input name="full-name" type="text" placeholder="full name">
+                <input name="phone-number" type="text" placeholder="phone number">
+                <input name="email" type="text" placeholder="email address">
+                <input name="password" type="password" placeholder="password">
+                <input name="conf-password" type="password" placeholder="confirm password">
+                <div class="checkbox-container">
+                    <input class="checkbox" id="tos" name="tos" type="checkbox">
+                    <label for="tos">I agree with
+                        <a class="link" href="#">Terms and Conditions</a>
+                    </label>
+                </div>
+                <button class="signup">Sign up</button>
+                <p>Already have an account?
+                    <a class="link" href="login.html">Login</a></p>
+
+            </form>
+        </div>
+    </div>
 </body>
-</html>

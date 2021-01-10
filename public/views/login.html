@@ -1,27 +1,53 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <script src="https://kit.fontawesome.com/4be3a0db2f.js" crossorigin="anonymous"></script>
+    <script src="../js/hamburger.js" defer></script>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>MAIN PAGE</title>
 </head>
 <body>
     <header>
-        <div class="container">
-
+        <nav class="navbar">
             <img src="../img/logo.svg" alt="logo" class="logo">
-
-            <nav>
+            <a href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="navbar-links">
                 <ul>
-                    <li><a href="#">HOME</a></li>
+                    <li><a href="login.html">HOME</a></li>
                     <li><a href="#">ABOUT US</a></li>
                     <li><a href="#">CAR LISTING</a></li>
                     <li><a href="#">CONTACT US</a></li>
                     <li><a href="#">FAQ</a></li>
-                    <li>
-                        <i class="fas fa-user"></i>
-                    </li>
                 </ul>
-            </nav>
-        </div>
+            </div>
+        </nav>
     </header>
+
+    <div class="container">
+        <div class="login-box">
+            <div class="login-container">
+                <p class="heading">Login</p>
+                <form>
+                    <input name="email" type="text" placeholder="email address">
+                    <input name="password" type="password" placeholder="password">
+                    <button class="login">Login</button>
+                </form>
+                <p>Don't have an account?<br>
+                    <a class="link" href="register.html">Sign up</a>
+                </p>
+                <a class="link" href="#">Forgot password?</a>
+            </div>
+        </div>
+        <div class="info-box">
+            <div class="read-more">
+                <p class="heading">FIND THE RIGHT CAR FOR YOU!</p>
+                <button class="rd-more">Read more</button>
+            </div>
+        </div>
+    </div>
+
+
 </body>
