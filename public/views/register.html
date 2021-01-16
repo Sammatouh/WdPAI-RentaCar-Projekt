@@ -17,9 +17,9 @@
             <div class="navbar-links">
                 <ul>
                     <li><a href="login.html">HOME</a></li>
-                    <li><a href="#">ABOUT US</a></li>
-                    <li><a href="#">CAR LISTING</a></li>
-                    <li><a href="#">CONTACT US</a></li>
+                    <li><a href="about.html">ABOUT US</a></li>
+                    <li><a href="carlisting.html">CAR LISTING</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
                     <li><a href="#">FAQ</a></li>
                 </ul>
             </div>
@@ -28,15 +28,15 @@
 
     <div class="container">
         <div class="register">
-            <p class="heading">Register</p>
+            <p class="heading-text">Register</p>
             <form>
-                <input name="full-name" type="text" placeholder="full name">
-                <input name="phone-number" type="text" placeholder="phone number">
-                <input name="email" type="text" placeholder="email address">
-                <input name="password" type="password" placeholder="password">
-                <input name="conf-password" type="password" placeholder="confirm password">
+                <input name="full-name" type="text" placeholder="full name" required>
+                <input name="phone-number" type="text" placeholder="phone number" required>
+                <input name="email" type="text" placeholder="email address" required>
+                <input name="password" type="password" placeholder="password" required>
+                <input name="conf-password" type="password" placeholder="confirm password" required>
                 <div class="checkbox-container">
-                    <input class="checkbox" id="tos" name="tos" type="checkbox">
+                    <input class="checkbox" id="tos" name="tos" type="checkbox" required>
                     <label for="tos">I agree with
                         <a class="link" href="#">Terms and Conditions</a>
                     </label>
