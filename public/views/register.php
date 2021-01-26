@@ -2,35 +2,26 @@
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/generic_style.css">
     <script src="public/js/hamburger.js" defer></script>
+    <script src="public/js/validation.js" defer></script>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>REGISTER</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <img src="public/img/logo.svg" alt="logo" class="logo">
-            <a href="#" class="toggle-button">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </a>
-            <div class="navbar-links">
-                <ul>
-                    <li><a href="login">HOME</a></li>
-                    <li><a href="about">ABOUT US</a></li>
-                    <li><a href="carlisting">CAR LISTING</a></li>
-                    <li><a href="contact">CONTACT US</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <?php include('components/navbar.php') ?>
 
-    <div class="container">
-        <div class="register">
+    <div class="container-v2">
+        <div class="register-box">
             <p class="heading-text">Register</p>
-            <form>
-                <input name="full-name" type="text" placeholder="full name" required>
+            <div class="messages">
+                <?php if (isset($messages)) {
+                    foreach ($messages as $message) {
+                        echo $message;
+                    }
+                }?>
+            </div>
+            <form action="register" method="POST">
+                <input name="first-name" type="text" placeholder="first name" required>
+                <input name="surname" type="text" placeholder="surname" required>
                 <input name="phone-number" type="text" placeholder="phone number" required>
                 <input name="email" type="text" placeholder="email address" required>
                 <input name="password" type="password" placeholder="password" required>
@@ -41,9 +32,9 @@
                         <a class="link" href="#">Terms and Conditions</a>
                     </label>
                 </div>
-                <button class="signup">Sign up</button>
+                <button class="signup" type="submit">Sign up</button>
                 <p>Already have an account?
-                    <a class="link" href="login.html">Login</a></p>
+                    <a class="link" href="login">Login</a></p>
 
             </form>
         </div>

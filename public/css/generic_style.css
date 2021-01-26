@@ -14,70 +14,21 @@ body, html {
     background-size: cover;
 }
 
-.navbar {
-    display: flex;
-    position: relative;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #3E3E3E;
-    color: #E4E4E4;
-}
-
-.navbar > img {
-    height: 2.5rem;
-    margin: 0.8rem;
-}
-
-.navbar-links {
-    height: 100%;
-}
-
-.navbar-links ul {
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar-links li {
-    list-style: none;
-    font-size: 1.2rem;
-}
-
-.navbar-links li a {
-    display: block;
-    text-decoration: none;
-    color: #E4E4E4;
-    padding: 1rem;
-}
-
-.navbar-links li:hover {
-    background-color: #D52A2A;
-}
-
-.toggle-button {
-    position: absolute;
-    top: 1.4rem;
-    right: 1rem;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-}
-
-.toggle-button .bar {
-    height: 3px;
-    width: 100%;
-    background-color: #E4E4E4;
-    border-radius: 10px;
-}
-
 .container {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
+}
+
+.container-v2 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -177,7 +128,7 @@ a {
     background: rgba(255, 255, 255, 0.84) 0% 0% no-repeat padding-box;
     border: 1px solid #707070;
     width: 70%;
-    height: 40%;
+    height: 20rem;
 
     display: flex;
     flex-direction: column;
@@ -185,10 +136,12 @@ a {
     align-items: center;
 }
 
-.register {
+.register-box {
     background: rgba(255, 255, 255, 0.84) 0% 0% no-repeat padding-box;
     border: 1px solid #707070;
     width: 70%;
+    height: 54rem;
+    margin: 5rem 0 2rem 0;
 }
 
 .checkbox-container {
@@ -230,39 +183,12 @@ button.signup {
     margin: 1rem 1.5rem 0.75rem 1.5rem
 }
 
+.no-valid {
+    border: 3px solid red;
+    box-shadow: 0 0 0.2em red;
+}
 
-@media (max-width: 700px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .toggle-button {
-        display: flex;
-    }
-
-    .navbar-links {
-        display: none;
-        width: 100%;
-    }
-
-    .navbar-links ul {
-        width: 100%;
-        flex-direction: column;
-    }
-
-    .navbar-links ul li {
-        text-align: center;
-    }
-
-    .navbar-links ul li a {
-        padding: .5rem 1rem;
-    }
-
-    .navbar-links.active {
-        display: flex;
-    }
-
+@media only screen and (max-width: 700px) {
     .container {
         flex-direction: column-reverse;
         justify-content: flex-end;
@@ -297,8 +223,9 @@ button.signup {
         margin-top: 20px;
     }
 
-    .register {
+    .register-box {
         width: 90%;
+        margin-top: 20px;
     }
 
     button.signup {

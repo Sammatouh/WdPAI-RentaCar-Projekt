@@ -6,37 +6,26 @@
     <title>MAIN PAGE</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <img src="public/img/logo.svg" alt="logo" class="logo">
-            <a href="#" class="toggle-button">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </a>
-            <div class="navbar-links">
-                <ul>
-                    <li><a href="login">HOME</a></li>
-                    <li><a href="about">ABOUT US</a></li>
-                    <li><a href="carlisting">CAR LISTING</a></li>
-                    <li><a href="contact">CONTACT US</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <?php include('components/navbar.php') ?>
 
     <div class="container">
         <div class="login-box">
             <div class="login-container">
                 <p class="heading-text">Login</p>
-                <form>
+                <div class="messages">
+                    <?php if (isset($messages)) {
+                        foreach ($messages as $message) {
+                            echo $message;
+                        }
+                    }?>
+                </div>
+                <form action="login" method="POST">
                     <input name="email" type="text" placeholder="email address">
                     <input name="password" type="password" placeholder="password">
-                    <button class="login">Login</button>
+                    <button class="login" type="submit">Login</button>
                 </form>
                 <p>Don't have an account?<br>
-                    <a class="link" href="register.html">Sign up</a>
+                    <a class="link" href="register">Sign up</a>
                 </p>
                 <a class="link" href="#">Forgot password?</a>
             </div>

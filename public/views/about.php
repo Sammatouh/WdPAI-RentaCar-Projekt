@@ -6,25 +6,7 @@
     <title>ABOUT US</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <img src="public/img/logo.svg" alt="logo" class="logo">
-            <a href="#" class="toggle-button">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </a>
-            <div class="navbar-links">
-                <ul>
-                    <li><a href="login">HOME</a></li>
-                    <li><a href="about">ABOUT US</a></li>
-                    <li><a href="carlisting">CAR LISTING</a></li>
-                    <li><a href="contact">CONTACT US</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <?php include('components/navbar.php') ?>
 
     <div class="heading-container">
         <p class="heading-text">About Us</p>
