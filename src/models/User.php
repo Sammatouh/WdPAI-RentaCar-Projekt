@@ -25,12 +25,12 @@ class User
         $this->joinTime = $joinTime;
     }
 
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
 
-    public function setId(int $id): void
+    public function setId($id): void
     {
         $this->id = $id;
     }

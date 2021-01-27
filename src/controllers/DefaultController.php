@@ -14,11 +14,6 @@ class DefaultController extends Controller
         $this->render('about');
     }
 
-    public function carListing()
-    {
-        $this->render('carlisting');
-    }
-
     public function contact()
     {
         $this->render('contact');

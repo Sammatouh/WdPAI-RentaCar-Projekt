@@ -9,7 +9,7 @@ Router::get('', 'DefaultController');
 Router::post('login', 'SecurityController');
 Router::post('register', 'SecurityController');
 Router::get('about', 'DefaultController');
-Router::get('carlisting', 'DefaultController');
+Router::get('carlisting', 'CarController');
 Router::get('contact', 'DefaultController');
 
 Router::run($path);
