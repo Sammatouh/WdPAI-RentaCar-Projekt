@@ -18,4 +18,9 @@ class DefaultController extends Controller
     {
         $this->render('contact');
     }
+
+    public function rent()
+    {
+        $this->render('rent');
+    }
 }

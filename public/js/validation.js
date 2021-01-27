@@ -28,9 +28,7 @@ function markValidation(element, condition) {
 function validateEmail() {
     setTimeout(function () {
             markValidation(emailInput, isEmail(emailInput.value));
-        },
-        1000
-    );
+        }, 1000);
 }
 
 function validatePasswordRepetition() {
@@ -40,9 +38,7 @@ function validatePasswordRepetition() {
                 confirmPasswordInput.value
             );
             markValidation(confirmPasswordInput, condition);
-        },
-        1000
-    );
+        }, 1000);
 }
 
 function validatePassword() {
