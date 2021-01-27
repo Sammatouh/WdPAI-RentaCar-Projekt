@@ -48,4 +48,17 @@ class CarRepository extends Repository
 
         return $result;
     }
+
+    public function getCarsBySearch(string $search)
+    {
+        $search = '%'.strtolower($search).'%';
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM cars WHERE LOWER(name) LIKE :search OR LOWER(info) LIKE :search
+        ');
+        $stmt->bindParam(':search', $search, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

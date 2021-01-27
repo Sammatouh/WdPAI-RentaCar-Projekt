@@ -2,7 +2,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/generic_style.css">
     <link rel="stylesheet" type="text/css" href="public/css/contact_style.css">
-    <script src="public/js/hamburger.js" defer></script>
+    <script type="text/javascript" src="public/js/hamburger.js" defer></script>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>CONTACT</title>
 </head>

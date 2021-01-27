@@ -9,8 +9,20 @@
     overflow: auto;
 }
 
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-bar > input {
+    text-align: center;
+    padding: 0;
+}
+
 .car-name {
     font-size: 1.3rem;
+    font-weight: bold;
 }
 
 .cars-container > div {

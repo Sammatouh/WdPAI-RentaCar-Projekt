@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/generic_style.css">
-    <script src="public/js/hamburger.js" defer></script>
-    <script src="public/js/validation.js" defer></script>
+    <script type="text/javascript" src="public/js/hamburger.js" defer></script>
+    <script type="text/javascript" src="public/js/validation.js" defer></script>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>REGISTER</title>
 </head>
