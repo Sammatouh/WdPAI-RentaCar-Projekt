@@ -62,4 +62,25 @@ class BookingController extends Controller
         header("Location: {$url}/carlisting");
 //        header("Location: {$url}/profile/{$_SESSION['userId']}");
     }
+
+    public function profile()
+    {
+        if (!$this->sessionManager->isSessionSet())
+        {
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/login");
+            return;
+        }
+
+        $user = $this->userRepository->getUser($_SESSION['email']);
+        $userBookings = $this->bookingRepository->getBookingsByUserId($_SESSION['userId']);
+        $allBookings = [];
+        if ($_SESSION['admin']) {
+            $allBookings = $this->bookingRepository->getAllBookings();
+        }
+        $this->render('profile',
+            ['user' => $user,
+             'userBookings' => $userBookings,
+             'allBookings' => $allBookings]);
+    }
 }

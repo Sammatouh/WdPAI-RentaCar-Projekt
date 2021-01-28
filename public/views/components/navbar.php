@@ -16,7 +16,7 @@
                 <li><a href="/carlisting">CAR LISTING</a></li>
                 <li><a href="/contact">CONTACT US</a></li>
                 <?php if (isset($_SESSION) && $_SESSION['login']) { ?>
-                <li><a href="/profile/<?= $_SESSION['userId']; ?>">PROFILE</a></li>
+                <li><a href="/profile">PROFILE</a></li>
                 <?php } ?>
             </ul>
         </div>

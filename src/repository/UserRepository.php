@@ -63,9 +63,9 @@ class UserRepository extends Repository
     public function isUserAdmin(int $id)
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM public.admins a JOIN public.users u ON u.id = a.id_users WHERE u.id = :id
+            SELECT * FROM public.admins WHERE id_users = :id
         ');
-        $stmt->bindParam(':id', $email, PDO::PARAM_STR);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
 
         $user = $stmt->fetch(PDO::FETCH_ASSOC);

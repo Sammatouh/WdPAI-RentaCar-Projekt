@@ -18,9 +18,4 @@ class DefaultController extends Controller
     {
         $this->render('contact');
     }
-
-    public function profile()
-    {
-        $this->render('profile');
-    }
 }
