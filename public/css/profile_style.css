@@ -1,0 +1,118 @@
+.top-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.profile-heading {
+    background: rgba(255, 255, 255, 0.84) 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    margin: 1rem 0 0.75rem 1.5rem;
+    grid-column: 1 / 6;
+    width: 100%;
+}
+
+button.logout {
+    margin: 1rem 1.5rem 0.75rem 0;
+    font-size: 1.3rem;
+}
+
+.profile-information {
+    background: rgba(255, 255, 255, 0.84) 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    margin: 1rem 1.5rem 0.75rem 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-information > img {
+    height: 250px;
+    margin: 2rem;
+}
+
+.user-info {
+    margin: 0 0.5rem 0.5rem 0.5rem;
+}
+
+.detail-name {
+    font-size: 1.2rem;
+}
+
+.user-details {
+    font-size: 1.3rem;
+}
+
+.divider {
+    margin: 1rem 1.5rem 0.75rem 1.5rem;
+}
+
+.bookings-container {
+    background: rgba(255, 255, 255, 0.84) 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    margin: 1rem 1.5rem 0.75rem 1.5rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 0.6rem;
+    overflow: auto;
+}
+
+.bookings-container > div {
+    background: rgba(255, 255, 255, 0.95) 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    height: auto;
+    width: 20rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.car-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.car-image {
+    border: 1px solid #707070;
+    height: auto;
+    width: 100%;
+}
+
+.booking-info {
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+button.cancel {
+    margin: 0.5rem 1rem 0.5rem 1rem;
+    width: 60%;
+    line-height: 1.8rem;
+    font-size: 1.4rem;
+}
+
+@media only screen and (max-width: 724px) {
+    .profile-information {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .heading-text {
+        font-size: 1.5rem;
+    }
+
+    .profile-information > img {
+        height: 170px;
+        margin: 2rem;
+    }
+
+    .detail-name {
+        font-size: 1rem;
+    }
+
+    .user-details {
+        font-size: 1.1rem;
+    }
+}
