@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="public/css/generic_style.css">
-    <script type="text/javascript" src="public/js/hamburger.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="/public/css/generic_style.css">
+    <script type="text/javascript" src="/public/js/hamburger.js" defer></script>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>ABOUT US</title>
 </head>

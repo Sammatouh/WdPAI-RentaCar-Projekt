@@ -1,6 +1,6 @@
 const form = document.querySelector("form");
 const daysInput = form.querySelector('input[name="nodays"]');
-const valueInput = form.querySelector('input[name="value"]');
+const valueInput = form.querySelector('input[name="booking-value"]');
 
 function empty() {
     if (daysInput.value === '') {

@@ -42,8 +42,14 @@
     width: 100%;
 }
 
+.rent-link {
+    margin: 1rem;
+    width: 40%;
+}
+
 button.rent {
-    width: 50%;
+    margin: 0;
+    width: 100%;
     line-height: 1.8rem;
     font-size: 1.4rem;
 }

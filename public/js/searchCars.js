@@ -39,6 +39,9 @@ function createCar(car) {
     image.src = `/public/uploads/${car.image}`;
     const name = clone.querySelector("p");
     name.innerHTML = car.name;
+    const link = clone.querySelector("a");
+    link.href = `/rent/${car.id}`;
+
 
     carsContainer.appendChild(clone);
 }

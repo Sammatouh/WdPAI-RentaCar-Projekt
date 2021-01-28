@@ -43,6 +43,8 @@ class SecurityController extends Controller
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
 
+        $this->sessionManager->sessionSet($email);
+
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/carlisting");
     }
