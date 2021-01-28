@@ -46,6 +46,7 @@
             <img class="car-image" src="/public/uploads/<?= $userBooking->getImage(); ?>">
             <p class="booking-info">Booked: <?= $userBooking->getWhenBooked(); ?></p>
             <p class="booking-info">for: <?= $userBooking->getDays(); ?> day(s)</p>
+            <p class="booking-info">Paid: <?= $userBooking->getValue(); ?>$</p>
         </div>
         <?php endforeach; ?>
     </section>
@@ -63,6 +64,7 @@
             <img class="car-image" src="/public/uploads/<?= $booking->getImage(); ?>">
             <p class="booking-info">Booked: <?= $booking->getWhenBooked(); ?></p>
             <p class="booking-info">for: <?= $booking->getDays(); ?> day(s)</p>
+            <p class="booking-info">Paid: <?= $booking->getValue(); ?>$</p>
             <p class="booking-info"><?= $booking->getUserName() . " " . $booking->getSurname(); ?></p>
             <p class="booking-info"><?= $booking->getEmail(); ?></p>
             <a class="delete-link" href="/deleteBooking/<?= $booking->getBookingId(); ?>"><button class="delete">DELETE</button></a>

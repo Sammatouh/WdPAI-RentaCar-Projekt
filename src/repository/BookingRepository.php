@@ -23,6 +23,15 @@ class BookingRepository extends Repository
         ]);
     }
 
+    public function deleteBookingById(int $id)
+    {
+        $stmt = $this->database->connect()->prepare('
+            DELETE FROM bookings WHERE id = :id
+        ');
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+    }
+
     public function getBookingsByUserId(int $id): ?array
     {
         $result = [];

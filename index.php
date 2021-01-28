@@ -15,6 +15,8 @@ Router::post('register', 'SecurityController');
 Router::get('carlisting', 'CarController');
 Router::post('search', 'CarController');
 Router::get('profile', 'BookingController');
+Router::get('deleteBooking', 'BookingController');
+Router::get('logout', 'BookingController');
 
 
 Router::run($path);

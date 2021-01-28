@@ -59,8 +59,7 @@ class BookingController extends Controller
         $this->bookingRepository->addBooking($booking);
 
         $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: {$url}/carlisting");
-//        header("Location: {$url}/profile/{$_SESSION['userId']}");
+        header("Location: {$url}/profile");
     }
 
     public function profile()
@@ -82,5 +81,24 @@ class BookingController extends Controller
             ['user' => $user,
              'userBookings' => $userBookings,
              'allBookings' => $allBookings]);
+    }
+
+    public function deleteBooking(int $id)
+    {
+        if (!$this->sessionManager->isSessionSet() || !$_SESSION['admin'])
+        {
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/profile");
+            return;
+        }
+
+        $this->bookingRepository->deleteBookingById($id);
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/profile");
+    }
+
+    public function logout()
+    {
+        $this->sessionManager->logout();
     }
 }
