@@ -94,12 +94,12 @@ class SecurityController extends Controller
 
         move_uploaded_file(
             $_FILES['profilePic']['tmp_name'],
-            dirname(__DIR__) . self::UPLOAD_DIRECTORY . strval($id) . "/" . $_FILES['profilePic']['name']
+            dirname(__DIR__) . self::UPLOAD_DIRECTORY . strval($id) . $_FILES['profilePic']['name']
         );
 
-        $oldPic = $this->userRepository->changeUserAvatar($_SESSION['userId'], $_FILES['profilePic']['name']);
+        $oldPic = $this->userRepository->changeUserAvatar($_SESSION['userId'], strval($id) . $_FILES['profilePic']['name']);
         if ($oldPic != 'default_avatar.png') {
-            unlink(dirname(__DIR__) . self::UPLOAD_DIRECTORY . strval($id) . "/" . $oldPic);
+            unlink(dirname(__DIR__) . self::UPLOAD_DIRECTORY . $oldPic);
         }
 
         $url = "http://$_SERVER[HTTP_HOST]";

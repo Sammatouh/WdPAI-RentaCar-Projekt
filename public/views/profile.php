@@ -33,7 +33,7 @@
 
     <div class="profile-information">
         <div class="avatar-box">
-            <img class="avatar-image" src="/public/uploads/avatars/<?= $user->getId() . "/" . $user->getAvatar(); ?>">
+            <img class="avatar-image" src="/public/uploads/avatars/<?= $user->getAvatar(); ?>">
             <div class="middle">
                 <span class="img-upload" onclick="openModal()"><i class="fas fa-image"></i></span>
             </div>
