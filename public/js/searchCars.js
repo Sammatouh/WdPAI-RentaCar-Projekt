@@ -36,7 +36,7 @@ function createCar(car) {
     const div = clone.querySelector("div");
     div.id = car.id;
     const image = clone.querySelector("img");
-    image.src = `/public/uploads/${car.image}`;
+    image.src = `/public/uploads/cars/${car.image}`;
     const name = clone.querySelector("p");
     name.innerHTML = car.name;
     const link = clone.querySelector("a");

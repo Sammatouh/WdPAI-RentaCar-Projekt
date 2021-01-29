@@ -12,6 +12,7 @@ Router::post('rent', 'BookingController');
 Router::post('rentCar', 'BookingController');
 Router::post('login', 'SecurityController');
 Router::post('register', 'SecurityController');
+Router::post('changeAvatar', 'SecurityController');
 Router::get('logout', 'SecurityController');
 Router::get('carlisting', 'CarController');
 Router::post('search', 'CarController');

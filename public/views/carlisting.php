@@ -21,7 +21,7 @@
         <?php foreach ($cars as $car): ?>
             <div id="<?= $car->getId(); ?>">
                 <p class="car-name"><?= $car->getName(); ?></p>
-                <img class="car-image" src="public/uploads/<?= $car->getImage(); ?>">
+                <img class="car-image" src="public/uploads/cars/<?= $car->getImage(); ?>">
                 <a class="rent-link" href="/rent/<?= $car->getId(); ?>"><button class="rent">RENT</button></a>
             </div>
         <?php endforeach; ?>

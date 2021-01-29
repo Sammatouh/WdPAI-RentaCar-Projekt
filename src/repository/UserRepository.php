@@ -90,4 +90,23 @@ class UserRepository extends Repository
 
         return $response['id'];
     }
+
+    public function changeUserAvatar(int $id, string $filename): string
+    {
+        $stmt = $this->database->connect()->prepare('
+            SELECT avatar FROM user_details WHERE id_users = :id
+        ');
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        $oldFile = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $stmt = $this->database->connect()->prepare('
+            UPDATE user_details SET avatar = :filename WHERE id_users = :id
+        ');
+        $stmt->bindParam(':filename', $filename, PDO::PARAM_STR);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $oldFile['avatar'];
+    }
 }

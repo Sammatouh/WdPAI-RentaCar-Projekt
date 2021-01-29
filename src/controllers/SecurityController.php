@@ -9,6 +9,7 @@ require_once __DIR__.'/../repository/UserRepository.php';
 
 class SecurityController extends Controller
 {
+    const UPLOAD_DIRECTORY = '/../public/uploads/avatars/';
     private $userRepository;
     private $sessionManager;
 
@@ -79,6 +80,30 @@ class SecurityController extends Controller
         $this->sessionManager->reset();
 
         $this->render('login', ['messages' => ['Account created']]);
+    }
+
+    public function changeAvatar(int $id)
+    {
+        if (!$this->sessionManager->isSessionSet()) {
+            return;
+        }
+
+        if (!($this->isPost() && is_uploaded_file($_FILES['profilePic']['tmp_name']))) {
+            return;
+        }
+
+        move_uploaded_file(
+            $_FILES['profilePic']['tmp_name'],
+            dirname(__DIR__) . self::UPLOAD_DIRECTORY . strval($id) . "/" . $_FILES['profilePic']['name']
+        );
+
+        $oldPic = $this->userRepository->changeUserAvatar($_SESSION['userId'], $_FILES['profilePic']['name']);
+        if ($oldPic != 'default_avatar.png') {
+            unlink(dirname(__DIR__) . self::UPLOAD_DIRECTORY . strval($id) . "/" . $oldPic);
+        }
+
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/profile");
     }
 
     public function logout()

@@ -15,7 +15,7 @@
     </div>
 
     <div class="rental-information">
-        <img src="/public/uploads/<?= $car->getImage(); ?>">
+        <img src="/public/uploads/cars/<?= $car->getImage(); ?>">
         <hr class="breaking-line">
         <p class="car-info"><?= $car->getInfo(); ?></p>
         <hr class="breaking-line">

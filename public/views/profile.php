@@ -4,6 +4,8 @@
     <link rel="stylesheet" type="text/css" href="/public/css/generic_style.css">
     <link rel="stylesheet" type="text/css" href="/public/css/profile_style.css">
     <script type="text/javascript" src="/public/js/hamburger.js" defer></script>
+    <script type="text/javascript" src="/public/js/modal.js" defer></script>
+    <script src="https://kit.fontawesome.com/4be3a0db2f.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>Profile</title>
 </head>
@@ -17,9 +19,26 @@
         <a class="logout-link" href="/logout"><button class="logout">LOGOUT</button></a>
     </div>
 
+    <div id="fileModal" class="modal">
+        <div class="modal-content">
+            <span onclick="closeModal()" class="close">&times;</span>
+            <h3>Change your profile picture</h3>
+            <form action="/changeAvatar/<?= $user->getId(); ?>" method="POST" enctype="multipart/form-data">
+                <input id="profPic" class="img-input" name="profilePic" type="file" onchange="return validFile()" required>
+                <label for="profPic">Supported file types:<br>.jpeg, .png, .gif</label>
+                <button class="change" type="submit" onclick="return isEmpty()">CHANGE</button>
+            </form>
+        </div>
+    </div>
 
     <div class="profile-information">
-        <img src="/public/uploads/<?= $user->getAvatar(); ?>">
+        <div class="avatar-box">
+            <img class="avatar-image" src="/public/uploads/avatars/<?= $user->getId() . "/" . $user->getAvatar(); ?>">
+            <div class="middle">
+                <span class="img-upload" onclick="openModal()"><i class="fas fa-image"></i></span>
+            </div>
+        </div>
+
         <div class="user-info">
             <label class="detail-name">Name: <b class="user-details"><?= $user->getName(); ?></b></label>
             <hr>
@@ -43,7 +62,7 @@
         <?php foreach ($userBookings as $userBooking): ?>
         <div id="<?= $userBooking->getBookingId(); ?>">
             <p class="car-name"><?= $userBooking->getCarName(); ?></p>
-            <img class="car-image" src="/public/uploads/<?= $userBooking->getImage(); ?>">
+            <img class="car-image" src="/public/uploads/cars/<?= $userBooking->getImage(); ?>">
             <p class="booking-info">Booked: <?= $userBooking->getWhenBooked(); ?></p>
             <p class="booking-info">for: <?= $userBooking->getDays(); ?> day(s)</p>
             <p class="booking-info">Paid: <?= $userBooking->getValue(); ?>$</p>
@@ -61,7 +80,7 @@
         <?php foreach ($allBookings as $booking): ?>
         <div id="<?= $booking->getBookingId(); ?>">
             <p class="car-name"><?= $booking->getCarName(); ?></p>
-            <img class="car-image" src="/public/uploads/<?= $booking->getImage(); ?>">
+            <img class="car-image" src="/public/uploads/cars/<?= $booking->getImage(); ?>">
             <p class="booking-info">Booked: <?= $booking->getWhenBooked(); ?></p>
             <p class="booking-info">for: <?= $booking->getDays(); ?> day(s)</p>
             <p class="booking-info">Paid: <?= $booking->getValue(); ?>$</p>
