@@ -80,4 +80,9 @@ class SecurityController extends Controller
 
         $this->render('login', ['messages' => ['Account created']]);
     }
+
+    public function logout()
+    {
+        $this->sessionManager->logout();
+    }
 }

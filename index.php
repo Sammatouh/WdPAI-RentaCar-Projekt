@@ -12,11 +12,11 @@ Router::post('rent', 'BookingController');
 Router::post('rentCar', 'BookingController');
 Router::post('login', 'SecurityController');
 Router::post('register', 'SecurityController');
+Router::get('logout', 'SecurityController');
 Router::get('carlisting', 'CarController');
 Router::post('search', 'CarController');
 Router::get('profile', 'BookingController');
 Router::get('deleteBooking', 'BookingController');
-Router::get('logout', 'BookingController');
 
 
 Router::run($path);

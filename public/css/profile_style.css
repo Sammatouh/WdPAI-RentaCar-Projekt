@@ -104,6 +104,11 @@ button.delete {
     font-size: 1.4rem;
 }
 
+button.delete:hover,
+button.logout:hover {
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 724px) {
     .profile-information {
         flex-direction: column;

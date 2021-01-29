@@ -96,9 +96,4 @@ class BookingController extends Controller
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/profile");
     }
-
-    public function logout()
-    {
-        $this->sessionManager->logout();
-    }
 }
